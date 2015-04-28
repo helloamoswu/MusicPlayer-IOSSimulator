@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MusicPath</key>
+	<string>http://www.dongting.com/ajax/v1.ard.tj.itlily.com/ttpod</string>
+	<key>TopListId</key>
+	<string>281</string>
+	<key>SearchPath</key>
+	<string>http://so.ard.iyyin.com/s/song_with_out</string>
+	<key>LrcPath</key>
+	<string>http://lp.music.ttpod.com/lrc/down</string>
+</dict>
+</plist>
