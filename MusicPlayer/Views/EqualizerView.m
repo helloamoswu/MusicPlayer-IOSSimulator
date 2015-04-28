@@ -32,6 +32,7 @@
 
 - (void)createEqualizer
 {
+    Float32 equalizerFreqs[8] = {50, 100, 200, 400, 800, 1600, 2600, 16000};
     self.sliders = [NSMutableArray array];
     for (int i = 0; i < 8; i++) {
         UISlider *slider = [[UISlider alloc]initWithFrame:CGRectMake(10, 10, 200, 30)];
@@ -94,13 +95,13 @@
 
 - (void)sliderValueChanged:(UISlider *)sender
 {
-    [self.playerManager.audioManager setGain:sender.value forEqualizerBand:(int)sender.tag];
+    [self.playerManager setGain:sender.value forEqualizerBand:(int)sender.tag];
 }
 
 - (void)restoreEqualizerValue
 {
     for (int i = 0; i < 8; i++) {
-        [self.playerManager.audioManager setGain:0 forEqualizerBand:i];
+        [self.playerManager setGain:0 forEqualizerBand:i];
         UISlider *slider = self.sliders[i];
         [UIView animateWithDuration:1.5 animations:^{
             slider.value = 0;

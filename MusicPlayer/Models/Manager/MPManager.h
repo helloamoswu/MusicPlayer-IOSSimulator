@@ -12,8 +12,6 @@
 
 typedef void (^Completion) (id obj);
 
-static Float32 equalizerFreqs[8] = {50, 100, 200, 400, 800, 1600, 2600, 16000};
-
 @class Music;
 @class Group;
 
@@ -26,7 +24,6 @@ static Float32 equalizerFreqs[8] = {50, 100, 200, 400, 800, 1600, 2600, 16000};
 
 @interface MPManager : NSObject<STKAudioPlayerDelegate>
 
-@property (nonatomic, strong)STKAudioPlayer *audioManager;
 @property (nonatomic, weak)id<MPManagerDelegate>delegate;
 
 @property (nonatomic, strong)NSArray *groups;
@@ -75,5 +72,7 @@ static Float32 equalizerFreqs[8] = {50, 100, 200, 400, 800, 1600, 2600, 16000};
 
 - (void)initialAppData;
 - (void)reLoadIpoadMusics;
+
+- (void)setGain:(float)gain forEqualizerBand:(int)bandIndex;
 
 @end

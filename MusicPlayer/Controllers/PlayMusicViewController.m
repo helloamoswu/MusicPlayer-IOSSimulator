@@ -214,6 +214,11 @@
 {
     // 更新歌曲名
     Music *curMusic = self.playerManager.curMusic;
+    
+    if (!curMusic) {
+        return;
+    }
+    
     self.title = [NSString stringWithFormat:@"%@ - %@",curMusic.artist, curMusic.title];
     // 设置音量
     self.playerManager.volume = self.volumSlider.value;

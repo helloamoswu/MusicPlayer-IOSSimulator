@@ -115,6 +115,12 @@
 
 - (void)updateMusicUI
 {
+    Music *curMusic = self.playerManager.curMusic;
+    
+    if (!curMusic) {
+        return;
+    }
+    
     self.playTimeSlider.maximumValue = self.playerManager.duration;
     
     if (self.playerManager.isPlaying) {
@@ -122,8 +128,6 @@
     } else {
         [self.playBtn setImage:[Utils playImage] forState:UIControlStateNormal];
     }
-    
-    Music *curMusic = self.playerManager.curMusic;
     
     UIImage *image = nil;
     if (self.playerManager.isIpodMusic) {
